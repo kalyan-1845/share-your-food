@@ -23,8 +23,15 @@ function AppContent() {
   const [ngoData, setData] = useState([]);
   const [isLoad, setLoad] = useState(true);
   const [foodData, setFoodData] = useState({ type: "", meal: "", quantity: 0 });
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
 
   useEffect(() => {
+    const handleBeforeInstallPrompt = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
     const fetchData = async () => {
       const data = await mockService.getNgos();
       setData(data);
@@ -34,8 +41,21 @@ function AppContent() {
     const timer = setTimeout(() => {
       setLoad(false);
     }, 2000);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    };
   }, []);
+
+  const handleInstallClick = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        setDeferredPrompt(null);
+      }
+    }
+  };
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -56,6 +76,16 @@ function AppContent() {
 
   return (
     <div className="App">
+      {/* Install App Popup */}
+      {deferredPrompt && (
+        <div style={{
+          position: 'fixed', bottom: '20px', left: '50%', transform: 'translateX(-50%)',
+          backgroundColor: '#4CAF50', color: 'white', padding: '12px 24px', fontWeight: 'bold',
+          borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', cursor: 'pointer', zIndex: 1000, display: 'flex', alignItems: 'center', gap: '10px'
+        }} onClick={handleInstallClick}>
+          <span>Install Seva App 📱</span>
+        </div>
+      )}
       <Switch>
         {/* Auth Guarded Routes */}
         {!user ? (
