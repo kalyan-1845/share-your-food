@@ -1,0 +1,54 @@
+.navbar {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  max-width: 414px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 0 24px;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.03);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.link:active {
+  transform: scale(0.9);
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.link_text {
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.disable {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Active state for icons - usually handled by React router NavLink, 
+   but for now we'll just style the basic links */
+.link:hover {
+  color: var(--primary);
+}

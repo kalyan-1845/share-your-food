@@ -1,0 +1,147 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  padding-bottom: 80px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.summaryCard {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  margin-top: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+.summaryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tag {
+  background: #fff1f0;
+  color: #cf1322;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.summaryInfo h3 {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+}
+
+.quantity {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.foodImg {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.formSection {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.field input {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  background: white;
+  width: 100%;
+}
+
+.dateTimeRow {
+  display: flex;
+  gap: 15px;
+}
+
+.dateTimeRow .field {
+  flex: 1;
+}
+
+.guideline {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.guideline input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.guideline label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.btnWrapper {
+  margin-top: 40px;
+}
+
+.successContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: white;
+}
+
+.successCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 300px;
+}
+
+.successCard h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.successCard p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}

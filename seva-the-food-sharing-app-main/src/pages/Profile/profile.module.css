@@ -1,0 +1,149 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  padding-bottom: 80px;
+}
+
+.main {
+  padding: 0;
+}
+
+.header {
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.settingsBtn {
+  background: #f5f5f5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.hero {
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.avatarWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--bg-main);
+  margin-bottom: 15px;
+  background: #f0f0f0;
+}
+
+.avatarWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userInfo h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.userInfo p {
+  margin: 5px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.editBtn {
+  margin-top: 15px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background: #f5f5f5;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.stats {
+  display: flex;
+  background: white;
+  padding: 20px;
+  margin: 15px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  justify-content: space-around;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statVal {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.menu {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menuItem {
+  background: white;
+  padding: 15px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menuItem:active {
+  transform: scale(0.98);
+}
+
+.menuIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #f0f7ff;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.menuItem span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
